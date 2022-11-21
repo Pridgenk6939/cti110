@@ -60,3 +60,4 @@ while menu_option != 3:
             break
 print('Thank you for playing!')
 print('BYE!')
+quit()
