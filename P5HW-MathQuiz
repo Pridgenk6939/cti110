@@ -1,0 +1,62 @@
+#This program will give simple math quizzes
+#11/21/2022
+#CTI-110 P5HW2 - Math Quiz
+#Kameron Pridgen
+#
+
+import random
+menu_option = 0
+while menu_option != 3:
+    print()
+    print("MAIN MENU")
+    print('--------------------------')
+    print('1. Adding Random Numbers')
+    print('2. Subtracting Random Numbers')
+    print('3. Exit')
+    print()
+    number_one = random.randint(-50,100)
+    number_two = random.randint(-50,100)
+    guesses = 0
+    menu_option = int(input('Please choose one of the menu options: '))
+    sum_answer = number_one + number_two
+    difference_answer = number_one - number_two
+    while menu_option == 1:
+        print(' ', number_one)
+        print('+', number_two)
+        user_guess = int(input("What is the answer?"))
+        while user_guess != sum_answer:
+            if user_guess > sum_answer:
+                print('Sorry, guess is too high.')
+                guesses = guesses + 1
+                break
+            elif user_guess < sum_answer:
+                print('Sorry, guess is too low.')
+                guesses = guesses + 1
+                break
+        else:
+            print("Congratulations!!!! Your answer is correct!")
+            guesses = guesses + 1
+            print("Number of guesses: ", guesses)
+            guesses = 0
+            break
+    while menu_option == 2:
+        print(' ', number_one)
+        print('-', number_two)
+        user_guess = int(input("What is the answer?"))
+        while user_guess != difference_answer:
+            if user_guess > difference_answer:
+                print('Sorry, guess is too high.')
+                guesses = guesses + 1
+                break
+            elif user_guess < difference_answer:
+                print('Sorry, guess is too low.')
+                guesses = guesses + 1
+                break
+        else:
+            print("Congratulations!!!! Your answer is correct!")
+            guesses = guesses + 1
+            print('Number of guesses: ', guesses)
+            guesses = 0
+            break
+print('Thank you for playing!')
+print('BYE!')
